@@ -1,0 +1,24 @@
+.table{
+    display: grid;
+    grid-template-columns: repeat(10,50px);
+    grid-template-rows: repeat(10,50px);
+}
+.main{
+    background-color: red;
+}
+.upper{
+    background-color: blue;
+}
+.lower{
+    background-color: yellow;
+}
+.def{
+    background-color: white;
+}
+
+.gridnic{
+    display: grid;
+    grid-template-columns: repeat(8,100px);
+    grid-template-rows: repeat(10,25px);
+    grid-auto-flow: column;
+}
