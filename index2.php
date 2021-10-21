@@ -1,16 +1,16 @@
 <?php
     if ($_SERVER['PATH_INFO']) {
-        header("Location: {$_SERVER['SCRIPT_NAME']}");
+        header("Location: {$_SERVER['SCRIPT_NAME']}?name=main");
         exit;
     }
-    if((!$_GET['name'] or count($_GET)>1 or !(2<=($_GET['name']) and ($_GET['name'])<=9)) and count($_GET)!=0){ 
-        header("Location: {$_SERVER['SCRIPT_NAME']}");  
+    if( count($_GET)!=1 or !(((2<=($_GET['name']) and ($_GET['name'])<=9)) or $_GET['name']=='main')){ 
+        header("Location: {$_SERVER['SCRIPT_NAME']}?name=main");
         exit;
     }
     
     function table(){
         $give='';
-        if ($_GET['name']) {
+        if ($_GET['name'] and $_GET['name']!='main') {
             $first=$_GET['name'];
             $stop=$first;
         } else {
